@@ -1,0 +1,84 @@
+ul {
+  list-style: none;
+}
+
+.current-date-main-information {
+  border-bottom: 1px solid #b7c4cf;
+  padding: 15px;
+}
+
+.all-information-container {
+  max-width: 700px;
+  border: 1px solid #b7c4cf;
+  border-radius: 10px;
+  margin: 5% auto;
+}
+
+.current-city-secondary-information {
+  position: relative;
+  text-align: right;
+}
+
+.first-current-day-row {
+  margin-bottom: 15px;
+}
+
+.date-time-information {
+  line-height: 1;
+}
+
+.temperature-with-units {
+  position: relative;
+  left: 25px;
+}
+
+.search-form {
+  max-width: 700px;
+  padding: 15px;
+}
+
+#day-description {
+  position: relative;
+  text-align: center;
+}
+
+#units {
+  position: relative;
+  top: -40px;
+}
+
+#city {
+  font-size: 45px;
+  text-align: right;
+  position: relative;
+  padding-top: 33px;
+  line-height: 1;
+}
+
+#current-temperature-value {
+  font-size: 70px;
+}
+
+#img-current-weather {
+  width: 125px;
+}
+
+#site-search-button {
+  padding: 6px 50px;
+  text-align: center;
+  border: 1px solid #b7c4cf;
+  border-radius: 30px;
+  color: blueviolet;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24);
+}
+
+#site-search-button:hover {
+  cursor: pointer;
+  border: 1px solid #006ec5;
+  color: #006ec5;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24);
+  transition: 200ms ease-in-out;
+}
+
+/* font-family: 'Caveat', cursive;
+font-family: 'Libre Franklin', sans-serif; */
