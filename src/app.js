@@ -47,12 +47,12 @@ setInterval(function () {
 function getSearchedCityName(event) {
   event.preventDefault();
   console.log("ghvghgv");
-  //   let apiKey = `b40b135798f82a05aed08769f9275f50`;
+  let apiKey = `b40b135798f82a05aed08769f9275f50`;
 
-  //   let searchedCity = document.querySelector("searchbar");
+  let searchedCity = document.querySelector("searchbar");
 
-  //   let apiLink = `https://api.openweathermap.org/data/2.5/weather?q=${searchedCity.value}&appid=${apiKey}&units=metric`;
-  //   console.log(apiLink);
+  let apiLink = `https://api.openweathermap.org/data/2.5/weather?q=${searchedCity}&appid=${apiKey}&units=metric`;
+  console.log(apiLink);
 }
 
 let searchButton = document.querySelector("#site-search-button");
