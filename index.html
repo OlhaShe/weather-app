@@ -18,12 +18,13 @@
       integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <div class="container">
       <div class="all-information-container">
         <div class="search-form">
-          <form action="search">
+          <form action="" method="get">
             <div class="row">
               <div class="col-9">
                 <input
@@ -35,7 +36,12 @@
                 />
               </div>
               <div class="col-3">
-                <button type="submit" id="site-search-button">Search</button>
+                <input
+                  type="submit"
+                  value="Search"
+                  class="search-button"
+                  id="site-search-button"
+                />
               </div>
             </div>
           </form>

@@ -41,3 +41,32 @@ setInterval(function () {
   currentTime = getTime();
   document.getElementById("current-time").innerHTML = currentTime;
 }, 1000);
+
+// GET SEARCHED CITY
+
+function getSearchedCityName(event) {
+  event.preventDefault();
+  console.log("ghvghgv");
+  //   let apiKey = `b40b135798f82a05aed08769f9275f50`;
+
+  //   let searchedCity = document.querySelector("searchbar");
+
+  //   let apiLink = `https://api.openweathermap.org/data/2.5/weather?q=${searchedCity.value}&appid=${apiKey}&units=metric`;
+  //   console.log(apiLink);
+}
+
+let searchButton = document.querySelector("#site-search-button");
+if (searchButton) {
+  console.log("search button", searchButton);
+} else {
+  console.log("not button");
+}
+searchButton.addEventListener("click", getSearchedCityName);
+
+// var el = document.getElementById("#site-search-button");
+// if (el) {
+//   console.log("not null");
+//   el.addEventListener("click", getSearchedCityName);
+// } else {
+//   console.log("isnull");
+// }
