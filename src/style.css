@@ -37,6 +37,10 @@ ul {
   padding: 15px;
 }
 
+.week-weather {
+  padding: 15px;
+}
+
 #day-description {
   position: relative;
   text-align: center;
