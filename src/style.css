@@ -2,6 +2,10 @@ ul {
   list-style: none;
 }
 
+a {
+  list-style: none;
+}
+
 .current-date-main-information {
   border-bottom: 1px solid #b7c4cf;
   padding: 15px;

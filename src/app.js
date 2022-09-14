@@ -94,10 +94,19 @@ function getSearchedCityName(event) {
 let searchButton = document.querySelector("#site-search-button");
 searchButton.addEventListener("click", getSearchedCityName);
 
-// var el = document.getElementById("#site-search-button");
-// if (el) {
-//   console.log("not null");
-//   el.addEventListener("click", getSearchedCityName);
-// } else {
-//   console.log("isnull");
+//Convert to Farinhate
+
+// function convertToF(celsius) {
+//   console.log(celsius);
+//   // make the given fahrenheit variable equal the given celsius value
+//   // multiply the given celsius value by 9/5 then add 32
+//   let fahrenheit = (celsius * 9) / 5 + 32;
+//   // return the variable fahrenheit as the answer
+//   console.log(fahrenheit);
+//   let setTemperature = document.querySelector("#current-temperature-value");
+//   setTemperature.innerHTML = fahrenheit;
 // }
+
+// let currentTemp = document.querySelector("#current-temperature-value".value);
+// let farengateButton = document.querySelector("#farengate");
+// farengate.addEventListener("click", convertToF(currentTemp));
