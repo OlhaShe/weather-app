@@ -76,6 +76,14 @@ function showCityWeatherDescription(response) {
   setDesc.innerHTML = updatedDescCaps;
 }
 
+function setIcon(response) {
+  let icon = document.querySelector("#img-current-weather");
+  let iconCode = response.data.weather[0].icon;
+  let iconLink = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+  console.log(iconCode, iconLink);
+  icon.setAttribute("src", iconLink);
+}
+
 function getSearchedCityName(event) {
   event.preventDefault();
 
@@ -89,12 +97,23 @@ function getSearchedCityName(event) {
   axios.get(apiLink).then(showCityHumidity);
   axios.get(apiLink).then(showCityWind);
   axios.get(apiLink).then(showCityWeatherDescription);
+  //  axios.get(apiLink).then(convertToFarinhate);
+  axios.get(apiLink).then(setIcon);
 }
 
 let searchButton = document.querySelector("#site-search-button");
 searchButton.addEventListener("click", getSearchedCityName);
 
 //Convert to Farinhate
+
+// function convertToFarinhate(response) {
+//   let celciyTemperature = Math.round(response.data.main.temp);
+//   console.log(celciyTemperature);
+//   let fahrenheit = (celciyTemperature * 9) / 5 + 32;
+//   console.log(fahrenheit);
+//   let setTemperature = document.querySelector("#current-temperature-value");
+//   setTemperature.innerHTML = fahrenheit;
+// }
 
 // function convertToF(celsius) {
 //   console.log(celsius);
@@ -107,6 +126,5 @@ searchButton.addEventListener("click", getSearchedCityName);
 //   setTemperature.innerHTML = fahrenheit;
 // }
 
-// let currentTemp = document.querySelector("#current-temperature-value".value);
 // let farengateButton = document.querySelector("#farengate");
-// farengate.addEventListener("click", convertToF(currentTemp));
+// farengate.addEventListener("click", convertToFarinhate());

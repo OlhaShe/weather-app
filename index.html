@@ -24,15 +24,16 @@
     <div class="container">
       <div class="all-information-container">
         <div class="search-form">
-          <form action="" method="get">
+          <form action="search" method="get" id="city-search-form">
             <div class="row">
               <div class="col-9">
                 <input
-                  type="text"
+                  type="search"
                   name="search"
                   id="searchbar"
                   placeholder="Type a city name..."
                   class="form-control"
+                  autofocus="off"
                 />
               </div>
               <div class="col-3">
@@ -46,11 +47,12 @@
             </div>
           </form>
         </div>
+
         <div class="current-date-main-information">
           <div class="container text-center first-current-day-row">
             <div class="row">
               <div class="col-4">
-                <img src="img/cloudy-day.png" alt="" id="img-current-weather" />
+                <img src="" alt="" id="img-current-weather" />
               </div>
               <div class="col-4 temperature-with-units">
                 <p>
