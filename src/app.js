@@ -51,9 +51,9 @@ function changeCityNameToSearchedOne(searchedCity) {
 }
 
 function showCityTemperature(response) {
-  let cityTemperature = Math.round(response.data.main.temp);
+  cityTemperature = response.data.main.temp;
   let selectTemp = document.querySelector("#current-temperature-value");
-  selectTemp.innerHTML = cityTemperature;
+  selectTemp.innerHTML = Math.round(cityTemperature);
 }
 
 function showCityHumidity(response) {
@@ -101,19 +101,18 @@ function getSearchedCityName(event) {
   axios.get(apiLink).then(setIcon);
 }
 
+function convertToFarinhate(event) {
+  event.preventDefault();
+  let selectTemp = document.querySelector("#current-temperature-value");
+  let fahrenheit = (cityTemperature * 9) / 5 + 32;
+  selectTemp.innerHTML = Math.round(fahrenheit);
+}
+
+let cityTemperature = null;
 let searchButton = document.querySelector("#site-search-button");
 searchButton.addEventListener("click", getSearchedCityName);
 
 //Convert to Farinhate
-
-// function convertToFarinhate(response) {
-//   let celciyTemperature = Math.round(response.data.main.temp);
-//   console.log(celciyTemperature);
-//   let fahrenheit = (celciyTemperature * 9) / 5 + 32;
-//   console.log(fahrenheit);
-//   let setTemperature = document.querySelector("#current-temperature-value");
-//   setTemperature.innerHTML = fahrenheit;
-// }
 
 // function convertToF(celsius) {
 //   console.log(celsius);
@@ -126,5 +125,8 @@ searchButton.addEventListener("click", getSearchedCityName);
 //   setTemperature.innerHTML = fahrenheit;
 // }
 
-// let farengateButton = document.querySelector("#farengate");
-// farengate.addEventListener("click", convertToFarinhate());
+let farengateButton = document.querySelector("#farengate-link");
+farengateButton.addEventListener("click", convertToFarinhate);
+
+//"farengate-link
+//celsius-link
