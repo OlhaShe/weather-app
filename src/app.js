@@ -108,6 +108,12 @@ function convertToFarinhate(event) {
   selectTemp.innerHTML = Math.round(fahrenheit);
 }
 
+function convertToCelsius(event) {
+  event.preventDefault();
+  let selectTemp = document.querySelector("#current-temperature-value");
+  selectTemp.innerHTML = Math.round(cityTemperature);
+}
+
 let cityTemperature = null;
 let searchButton = document.querySelector("#site-search-button");
 searchButton.addEventListener("click", getSearchedCityName);
@@ -127,6 +133,9 @@ searchButton.addEventListener("click", getSearchedCityName);
 
 let farengateButton = document.querySelector("#farengate-link");
 farengateButton.addEventListener("click", convertToFarinhate);
+
+let celsiusButton = document.querySelector("#celsius-link");
+celsiusButton.addEventListener("click", convertToCelsius);
 
 //"farengate-link
 //celsius-link
