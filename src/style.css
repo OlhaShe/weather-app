@@ -3,7 +3,7 @@ ul {
 }
 
 a {
-  list-style: none;
+  text-decoration: none !important;
 }
 
 body {
@@ -44,6 +44,7 @@ body {
 .temperature-with-units {
   position: relative;
   left: 25px;
+  text-decoration: none;
 }
 
 .search-form {
@@ -55,6 +56,16 @@ body {
   padding: 25px;
   padding-bottom: 35px;
   background-color: #d1d1d1;
+}
+
+.temperature-with-units .active {
+  color: black;
+  cursor: default;
+  text-decoration: none;
+}
+
+.temperature-with-units .active:hover {
+  text-decoration: none;
 }
 
 #day-description {

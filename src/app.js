@@ -104,6 +104,9 @@ function getSearchedCityName(event) {
 function convertToFarinhate(event) {
   event.preventDefault();
   let selectTemp = document.querySelector("#current-temperature-value");
+  celsiusButton.classList.remove("active");
+  farengateButton.classList.add("active");
+
   let fahrenheit = (cityTemperature * 9) / 5 + 32;
   selectTemp.innerHTML = Math.round(fahrenheit);
 }
@@ -112,6 +115,8 @@ function convertToCelsius(event) {
   event.preventDefault();
   let selectTemp = document.querySelector("#current-temperature-value");
   selectTemp.innerHTML = Math.round(cityTemperature);
+  farengateButton.classList.remove("active");
+  celsiusButton.classList.add("active");
 }
 
 let cityTemperature = null;
