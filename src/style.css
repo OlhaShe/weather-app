@@ -61,11 +61,15 @@ body {
 .temperature-with-units .active {
   color: black;
   cursor: default;
-  text-decoration: none;
 }
 
 .temperature-with-units .active:hover {
   text-decoration: none;
+}
+
+.created-code {
+  display: block;
+  text-align: center;
 }
 
 #day-description {
