@@ -56,11 +56,56 @@ function showCityTemperature(response) {
   selectTemp.innerHTML = Math.round(cityTemperature);
 }
 
+function displayForecast(response) {
+  let forecast = response.data.daily;
+
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
+      <div class="col-2">
+        <div class="weather-forecast-date">${getDate(forecastDay.dt)}</div>
+        <img
+          src="http://openweathermap.org/img/wn/${
+            forecastDay.weather[0].icon
+          }@2x.png"
+          alt=""
+          width="42"
+        />
+        <div class="weather-forecast-temperatures">
+          <span class="weather-forecast-temperature-max"> ${Math.round(
+            forecastDay.temp.max
+          )}° </span>
+          <span class="weather-forecast-temperature-min"> ${Math.round(
+            forecastDay.temp.min
+          )}° </span>
+        </div>
+      </div>
+  `;
+    }
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(response) {
+  let lat = response.data.coord.lat;
+  let lon = response.data.coord.lon;
+
+  let apiKey = `b40b135798f82a05aed08769f9275f50`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function showCityHumidity(response) {
   let setHumidity = document.querySelector("#humidity");
   let cityPrecipitation = response.data.main.humidity;
   setHumidity.innerHTML = `HUMIDITY: ${cityPrecipitation}%`;
-  //  console.log();
 }
 
 function showCityWind(response) {
@@ -97,8 +142,9 @@ function getSearchedCityName(event) {
   axios.get(apiLink).then(showCityHumidity);
   axios.get(apiLink).then(showCityWind);
   axios.get(apiLink).then(showCityWeatherDescription);
-  //  axios.get(apiLink).then(convertToFarinhate);
   axios.get(apiLink).then(setIcon);
+
+  axios.get(apiLink).then(getForecast);
 }
 
 function convertToFarinhate(event) {
@@ -123,24 +169,8 @@ let cityTemperature = null;
 let searchButton = document.querySelector("#site-search-button");
 searchButton.addEventListener("click", getSearchedCityName);
 
-//Convert to Farinhate
-
-// function convertToF(celsius) {
-//   console.log(celsius);
-//   // make the given fahrenheit variable equal the given celsius value
-//   // multiply the given celsius value by 9/5 then add 32
-//   let fahrenheit = (celsius * 9) / 5 + 32;
-//   // return the variable fahrenheit as the answer
-//   console.log(fahrenheit);
-//   let setTemperature = document.querySelector("#current-temperature-value");
-//   setTemperature.innerHTML = fahrenheit;
-// }
-
 let farengateButton = document.querySelector("#farengate-link");
 farengateButton.addEventListener("click", convertToFarinhate);
 
 let celsiusButton = document.querySelector("#celsius-link");
 celsiusButton.addEventListener("click", convertToCelsius);
-
-//"farengate-link
-//celsius-link
